@@ -48,7 +48,7 @@ echo "---------------------------------"
 ## Check if privileged mode is enabled
 echo "## Checking Docker Socket..."
 dock_sock=$(find / -name docker.sock 2>/dev/null)
-if [ -n $dock_sock ]; then
+if [ -n "$dock_sock" ]; then
 	echo "[+] Found a mounted docker socket here : $dock_sock"
 fi
 
