@@ -41,6 +41,8 @@ if [[ $? -eq 0 ]]; then
 	echo "[+] The container is running as privileged mode !"
 	# clean the dummy0 link
 	ip link delete dummy0 2> /dev/null
+else
+	echo "[-] The container is not running as privileged mode"
 fi
 
 echo "---------------------------------"
@@ -50,6 +52,8 @@ echo "## Checking Docker Socket..."
 dock_sock=$(find / -name docker.sock 2>/dev/null)
 if [ -n "$dock_sock" ]; then
 	echo "[+] Found a mounted docker socket here : $dock_sock"
+else
+	echo "[-] No Docker socket found..."
 fi
 
 echo "---------------------------------"
